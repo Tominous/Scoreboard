@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="jquery.mobile-1.5.0/jquery.mobile.custom.structure.min.css">
+    <link rel="stylesheet" type="text/css" href="jquery.mobile-1.5.0/jquery.mobile.custom.theme.min.css">
+    <script src="jquery-3.1.1/jquery-3.1.1.min.js"></script>
+    <script src="jquery.mobile-1.5.0/jquery.mobile.custom.min.js"></script>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+    <title>[Insert title here]</title>
+</head>
+<body>
+<div id="clock_display" class="timer">
+    0:00:0
+</div>
+
+<div id="panel_display" class="panel-group">
+    <div id="score-zone">
+    </div>
+</div>
+
+<div id="panel_edit" class="panel-group" style="max-width: 300px" hidden>
+    <label>Score color</label>
+    <input id="edit-color" type="color">
+    <label>Background color</label>
+    <input id="edit-bg-color" type="color" value="#ffffff">
+    <label>Team name color</label>
+    <input id="edit-name-color" type="color">
+    <label>Team name</label>
+    <input id="edit-team-name" type="text">
+    <input type="button" onclick="edit_submit()" value="Add">
+</div>
+
+<div id="panel_timer" class="panel-group" style="max-width: 300px" hidden>
+    <label>Time</label>
+    <input id="timer_time" type="text" value="0:00:0">
+    <label>Break time</label>
+    <input id="timer_break" type="text" value="0:00:0">
+    <label>Break time message</label>
+    <input id="timer_break_msg" type="text" value="Break time?">
+    <label>Game end message</label>
+    <input id="game_end_msg" type="text" value="Game is ended!">
+    <input id="timer_set" type="button" value="Set" onclick="timer.update()">
+</div>
+
+<div id="panel_alert" class="panel-group" hidden>
+    <div id="alert-div" class="alert-text">
+        Your dinner is done!
+    </div>
+    <button onclick="showDisplay()" class="ui-mini" style="position: absolute; top: 85%">Dismiss</button>
+</div>
+
+<div class="page-footer">
+    <button class="ui-mini ui-button-inline" onclick="showAddMenu()">Add</button>
+    <button class="ui-mini ui-button-inline" onclick="reset()">Reset</button>
+    <button class="ui-mini ui-button-inline" onclick="timer.ui();">Timer</button>
+    <button class="ui-mini ui-button-inline" onclick="timerstartstop();">Timer Start/Stop</button>
+    <span style="text-align: right; color: #eeeeee">Copyright © Porama6400 </span>
+</div>
+</body>
+</html>

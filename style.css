@@ -1,0 +1,72 @@
+div {
+    user-select: none;
+}
+
+#score-zone {
+    width: 100%;
+    top: 15%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+.score-panel {
+    min-height: 50px;
+    outline: 1px solid lightgray;
+    width: 25%;
+    height: 450px;
+    float: left;
+}
+
+.edit-btn {
+    buttom: 0;
+}
+
+.score-title {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.score-num {
+    text-align: center;
+    font-size: 275px;
+}
+
+.div-score-button {
+    width: 100%;
+    min-width: 100%;
+}
+
+.score-button {
+    float: left;
+    min-width: 30%;
+}
+
+.page-footer {
+    position: absolute;
+    top: 92%;
+    height: 8%;
+    width: 100%;
+    outline: 1px solid lightgrey;
+}
+
+.timer {
+    display: block;
+    width: 100%;
+    height: 15%;
+    top: 0%;
+    font-size: 80px;
+    text-align: center;
+}
+
+.alert-text {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    color: #f00;
+    font-size: 90px;
+    text-align: center;
+}
+
+.panel-group {
+}
