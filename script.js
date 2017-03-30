@@ -2,6 +2,7 @@ const panelWidth = 97; //100 - 1.5 - 1.5
 var teamCount = 0;
 var scoreFontSize = 275;
 var fontSizeUI_shown = true;
+var editing_team = "";
 
 function update() {
     if (teamCount == 0) return;
@@ -63,9 +64,10 @@ function add(tid, name, color, bgcolor, namecolor) {
     btn_sub.onclick = function () {
         mathAdd(score_div, -1);
     }
-    btn_clear.value = "X";
+    btn_clear.value = "More";
     btn_clear.onclick = function () {
-        score_div.innerHTML = "0";
+        editing_team = score_div.id;
+        showPanel("panel_edit_team");
     }
     btn_div.appendChild(btn_add);
     btn_div.appendChild(btn_sub);
@@ -122,6 +124,16 @@ function timerstartstop() {
 function showAlert(text) {
     $("#alert-div").text(text);
     showPanel("panel_alert");
+}
+
+function resetTeamScore() {
+    $("#" + editing_team).text("0");
+    showDisplay();
+}
+
+function changeTeamColor() {
+    $("#" + editing_team).css("color",$("#team-edit-color").val());
+    showDisplay();
 }
 
 //INITIAL SCRIPT

@@ -47,6 +47,12 @@
     <input id="timer_set" type="button" value="Set" onclick="timer.update()">
 </div>
 
+<div id="panel_edit_team" class="panel-group" hidden>
+    <input id="team-edit-color" type="color">
+    <button onclick="changeTeamColor()">Change color</button>
+    <button onclick="resetTeamScore()">Reset to 0</button>
+</div>
+
 <div id="panel_alert" class="panel-group" hidden>
     <div id="alert-div" class="alert-text"></div>
     <button onclick="showDisplay()" class="ui-mini" style="position: absolute; top: 85%">Dismiss</button>
@@ -63,7 +69,7 @@
     <button class="ui-mini ui-button-inline font-size-ui" onclick="timer.increaseFontSize(-10);">TFS-</button>
     <button class="ui-mini ui-button-inline font-size-ui" onclick="increaseScoreFontSize(10)">SFS+</button>
     <button class="ui-mini ui-button-inline font-size-ui" onclick="increaseScoreFontSize(-10)">SFS-</button>
-    <span style="text-align: right; color: #eeeeee">Copyright © Porama6400 </span>
+    <span style="text-align: right; color: #eeeeee">Copyright 2017 © Porama6400 </span>
 </div>
 </body>
 </html>
