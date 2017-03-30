@@ -49,7 +49,6 @@ timer.update = function () {
         timer.break = parseTime(parseInt(timeinput[0]), parseInt(timeinput[1]), parseInt(timeinput[2]))
     }
     timer.updateDisplay()
-    timer.run = true;
     showPanel("panel_display");
 }
 
