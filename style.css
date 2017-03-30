@@ -32,6 +32,10 @@ div {
     font-size: 275px;
 }
 
+.font-size-ui {
+
+}
+
 .div-score-button {
     width: 100%;
     min-width: 100%;
@@ -55,7 +59,7 @@ div {
     width: 100%;
     height: 15%;
     top: 0%;
-    font-size: 80px;
+    font-size: 120px;
     text-align: center;
 }
 

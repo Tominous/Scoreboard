@@ -1,9 +1,26 @@
 const panelWidth = 97; //100 - 1.5 - 1.5
 var teamCount = 0;
+var scoreFontSize = 275;
+var fontSizeUI_shown = true;
 
 function update() {
     if (teamCount == 0) return;
     $(".score-panel").css("width", (panelWidth / teamCount) + "%")
+}
+
+function increaseScoreFontSize(addBy) {
+    scoreFontSize += addBy;
+    $(".score-num").css("font-size", scoreFontSize + "px");
+}
+
+function toggleFontSizeUI() {
+    if (fontSizeUI_shown) {
+        $(".font-size-ui").hide();
+    }
+    else {
+        $(".font-size-ui").show();
+    }
+    fontSizeUI_shown = !fontSizeUI_shown;
 }
 
 function add(tid, name, color, bgcolor, namecolor) {
@@ -105,3 +122,8 @@ function showAlert(text) {
     $("#alert-div").text(text);
     showPanel("panel_alert");
 }
+
+//INITIAL SCRIPT
+$(function () {
+    toggleFontSizeUI();
+})

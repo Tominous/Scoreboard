@@ -1,13 +1,19 @@
 var timer = {};
 timer.time = 0;
 timer.break = 0;
+timer.fontsize = 120;
 timer.run = false;
+
+timer.increaseFontSize = function (addBy) {
+    timer.fontsize += addBy;
+    $("#clock_display").css("font-size", timer.fontsize + "px");
+}
 
 setInterval(function () { //TICK WORKER
     if (!timer.run) return
     if (timer.time <= 0) {
         timer.run = false;
-       showAlert($("#game_end_msg").val());
+        showAlert($("#game_end_msg").val());
         return;
     }
     if (timer.break > 0) {
