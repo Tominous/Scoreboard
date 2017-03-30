@@ -3,6 +3,7 @@ timer.time = 0;
 timer.break = 0;
 timer.fontsize = 120;
 timer.run = false;
+timer.countdown = true;
 
 timer.increaseFontSize = function (addBy) {
     timer.fontsize += addBy;
@@ -11,21 +12,26 @@ timer.increaseFontSize = function (addBy) {
 
 setInterval(function () { //TICK WORKER
     if (!timer.run) return
-    if (timer.time <= 0) {
-        timer.run = false;
-        showAlert($("#game_end_msg").val());
-        return;
-    }
-    if (timer.break > 0) {
-        if (timer.time == timer.break) {
+    if(timer.countdown) {
+        if (timer.time <= 0) {
             timer.run = false;
-            timer.break = 0;
-            showAlert($("#timer_break_msg").val());
-            $("#timer_break").val("0:00:0");
+            showAlert($("#game_end_msg").val());
             return;
         }
+        if (timer.break > 0) {
+            if (timer.time == timer.break) {
+                timer.run = false;
+                timer.break = 0;
+                showAlert($("#timer_break_msg").val());
+                $("#timer_break").val("0:00:0");
+                return;
+            }
+        }
+        timer.time -= 1;
     }
-    timer.time -= 1;
+    else{
+        timer.time += 1;
+    }
     timer.updateDisplay();
 }, 100);
 

@@ -36,6 +36,7 @@
 </div>
 
 <div id="panel_timer" class="panel-group" style="max-width: 300px" hidden>
+    <input type="button" value="Stopwatch Mode" onclick="timer.countdown = false; showDisplay();">
     <label>Time</label>
     <input id="timer_time" type="text" value="0:00:0">
     <label>Break time</label>
@@ -44,7 +45,7 @@
     <input id="timer_break_msg" type="text" value="msg.break">
     <label>Game end message</label>
     <input id="game_end_msg" type="text" value="msg.end">
-    <input id="timer_set" type="button" value="Set" onclick="timer.update()">
+    <input type="button" value="Set" onclick="timer.countdown = true; timer.update();">
 </div>
 
 <div id="panel_edit_team" class="panel-group" hidden>
