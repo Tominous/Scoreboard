@@ -3,8 +3,9 @@ div {
 }
 
 #score-zone {
+    position: absolute;
     width: 100%;
-    top: 15%;
+    top: 18%;
     padding-left: 1.5%;
     padding-right: 1.5%;
 }
@@ -23,7 +24,8 @@ div {
 
 .score-title {
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
+    line-height: 30px;
     color: black;
 }
 
@@ -56,12 +58,29 @@ div {
 }
 
 .timer {
+    /*
     display: block;
     width: 100%;
     height: 15%;
     top: 0%;
     font-size: 120px;
     text-align: center;
+    */
+    position: absolute;
+    display: block;
+    height: 15%;
+    top: 0%;
+    Left: 50%;
+    line-height: 110px;
+    transform: translate(-50%, 0);
+    font-size: 120px;
+}
+
+.current-time{
+    position: absolute;
+    left: 2%;
+    font-size: 60px;
+    color: darkgray;
 }
 
 .alert-text {

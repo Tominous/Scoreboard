@@ -14,13 +14,15 @@
     <title>[Insert title here]</title>
 </head>
 <body>
-<div id="clock_display" class="timer">
-    0:00:0
+<div style="display: block;width: 100%" id="top-bar">
+    <div id="clock_display" class="timer">
+        0:00:0
+    </div>
+    <div id="current-time" class="current-time"></div>
 </div>
 
 <div id="panel_display" class="panel-group">
-    <div id="score-zone">
-    </div>
+    <div id="score-zone"></div>
 </div>
 
 <div id="panel_edit" class="panel-group" style="max-width: 300px" hidden>
@@ -36,7 +38,7 @@
 </div>
 
 <div id="panel_timer" class="panel-group" style="max-width: 300px" hidden>
-    <input type="button" value="Stopwatch Mode" onclick="timer.countdown = false; showDisplay();">
+    <input type="button" value="Stopwatch Mode" onclick="timer.time = 0; timer.countdown = false; showDisplay();">
     <label>Time</label>
     <input id="timer_time" type="text" value="0:00:0">
     <label>Break time</label>
@@ -52,6 +54,7 @@
     <input id="team-edit-color" type="color">
     <button onclick="changeTeamColor()">Change color</button>
     <button onclick="resetTeamScore()">Reset to 0</button>
+    <button onclick="InitializeScoreSwitching()">Switch place</button>
 </div>
 
 <div id="panel_alert" class="panel-group" hidden>

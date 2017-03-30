@@ -12,7 +12,7 @@ timer.increaseFontSize = function (addBy) {
 
 setInterval(function () { //TICK WORKER
     if (!timer.run) return
-    if(timer.countdown) {
+    if (timer.countdown) {
         if (timer.time <= 0) {
             timer.run = false;
             showAlert($("#game_end_msg").val());
@@ -29,11 +29,20 @@ setInterval(function () { //TICK WORKER
         }
         timer.time -= 1;
     }
-    else{
+    else {
         timer.time += 1;
     }
     timer.updateDisplay();
 }, 100);
+
+setInterval(function () {
+    var date = new Date();
+    var hour = date.getHours();
+    var ampm = (hour >= 12 ? "PM" : "AM");
+    hour = hour % 12;
+    if (hour == 0) hour = 12;
+    $("#current-time").text(hour + ":" + ("00" + date.getMinutes()).slice(-2) + " " + ampm);
+}, 1000);
 
 timer.updateDisplay = function () {
     var min = parseInt(timer.time / 600);
