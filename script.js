@@ -97,6 +97,7 @@ function edit_submit() {
     var bgcolor = $("#edit-bg-color").val();
     var teamnamecolor = $("#edit-name-color").val();
     add(teamname, teamname, scorecolor, bgcolor, teamnamecolor);
+    increaseScoreFontSize(0); //UPDATE FONT SIZE
     $("#edit-team-name").val("");
     showPanel("panel_display");
 }
